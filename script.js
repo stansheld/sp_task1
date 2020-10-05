@@ -7,7 +7,7 @@ function readTextFile(file, callback) {
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4 && rawFile.status == "200") {
             callback(rawFile.responseText);
-        } else {
+        } else if (rawFile.status == "0")  {
             callback(bigData);
         }
     }
